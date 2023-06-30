@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html>
     <script>
-        function getUrlParams() {     
-    var params = {};  
-    
-    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, 
-    	function(str, key, value) { 
-        	params[key] = value; 
-        }
-    );     
-    
-    return params; 
-}
-    let param = getUrlParams;
+    let param = window.location.search;
     document.write(param);
+    console.log(param);
     </script>
 <body>
 </body>

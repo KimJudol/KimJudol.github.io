@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
+    <script>
+        function getUrlParams() {     
+    var params = {};  
+    
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, 
+    	function(str, key, value) { 
+        	params[key] = value; 
+        }
+    );     
+    
+    return params; 
+}
+    let param = getUrlParams;
+    document.write(param);
+    </script>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
 </body>
 </html>

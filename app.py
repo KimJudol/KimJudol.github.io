@@ -15,7 +15,7 @@ except:
 
 
 def read_url(url, cookie={"name": "name", "value": "value"}):
-    cookie.update({"domain": "http://localhost"})
+    cookie.update({"domain": "http://host3.dreamhack.games/"})
     try:
         options = webdriver.ChromeOptions()
         for _ in [
@@ -29,7 +29,7 @@ def read_url(url, cookie={"name": "name", "value": "value"}):
         driver = webdriver.Chrome("/chromedriver", options=options)
         driver.implicitly_wait(3)
         driver.set_page_load_timeout(3)
-        driver.get("http://localhost")
+        driver.get("http://host3.dreamhack.games/")
         driver.add_cookie(cookie)
         driver.get(url)
     except Exception as e:
@@ -41,7 +41,7 @@ def read_url(url, cookie={"name": "name", "value": "value"}):
 
 
 def check_xss(param, cookie={"name": "name", "value": "value"}):
-    url = f"http://localhost/vuln?param={urllib.parse.quote(param)}"
+    url = f"http://host3.dreamhack.games/vuln?param={urllib.parse.quote(param)}"
     return read_url(url, cookie)
 
 @app.after_request
